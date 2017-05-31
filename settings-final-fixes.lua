@@ -7,16 +7,16 @@ for _,s in pairs{"int-setting", "double-setting"} do
 	for k,v in pairs(data.raw[s]) do
 		local t = {}
 		if v.minimum_value ~= nil  then
-			table.insert(t, "Min: " .. v.minimum_value)
+			table.insert(t, "Minimum: " .. v.minimum_value)
 		end
 		if v.default_value ~= nil  then
 			table.insert(t, "Default: " .. v.default_value)
 		end
 		if v.maximum_value ~= nil  then
-			table.insert(t, "Max: " .. v.maximum_value)
+			table.insert(t, "Maximum: " .. v.maximum_value)
 		end
 		if #t then
-			v.localised_description = {"noxys-extrasettingsinfo.merge", {"mod-setting-description." .. v.name}, "\n\n" .. table.concat(t, " ") .. "."}
+			v.localised_description = {"noxys-extrasettingsinfo.merge", {"mod-setting-description." .. v.name}, "\n\n" .. table.concat(t, ", ") .. "."}
 		end
 	end
 end
