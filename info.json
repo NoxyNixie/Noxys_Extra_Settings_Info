@@ -1,11 +1,11 @@
 {
   "name": "Noxys_Extra_Settings_Info",
-  "version": "0.0.4",
-  "factorio_version": "0.15",
+  "version": "0.0.5",
+  "factorio_version": "0.16",
   "title": "Noxys Extra Settings Info",
   "author": "Noxy",
   "contact": "donotcontactme@example.com",
   "homepage": "https://mods.factorio.com/",
   "description": "Adds a small line to all settings descriptions indicating what the limits and defaults are for that setting.",
-  "dependencies": ["base >= 0.15.0"]
+  "dependencies": ["base >= 0.16.0"]
 }
