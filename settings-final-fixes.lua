@@ -1,5 +1,5 @@
 if data.raw["bool-setting"] then
-	for k,v in pairs(data.raw["bool-setting"]) do
+	for _,v in pairs(data.raw["bool-setting"]) do
 		if v.default_value ~= nil then
 			v.localised_description = {"noxys-extrasettingsinfo.merge", {"mod-setting-description." .. v.name}, "\n\n" .. "Default: " .. tostring(v.default_value) .. "."}
 		end
@@ -7,7 +7,7 @@ if data.raw["bool-setting"] then
 end
 for _,s in pairs{"int-setting", "double-setting"} do
 	if data.raw[s] then
-		for k,v in pairs(data.raw[s]) do
+		for _,v in pairs(data.raw[s]) do
 			local t = {}
 			if v.minimum_value ~= nil  then
 				table.insert(t, "Minimum: " .. v.minimum_value)
@@ -25,7 +25,7 @@ for _,s in pairs{"int-setting", "double-setting"} do
 	end
 end
 if data.raw["string-setting"] then
-	for k,v in pairs(data.raw["string-setting"]) do
+	for _,v in pairs(data.raw["string-setting"]) do
 		local t = {}
 		if v.default_value ~= nil  then
 			table.insert(t, "Default: \"" .. v.default_value .. "\"")
