@@ -14,21 +14,21 @@ for _,s in pairs{"int-setting", "double-setting"} do
 				local t = {"noxys-extrasettingsinfo.merge", {"mod-setting-description." .. v.name}, "\n\n"}
 				local comma = false
 				if v.minimum_value ~= nil  then
-					t = {"noxys-extrasettingsinfo.merge4", t, {"noxys-extrasettingsinfo.minimum"}, ": ", v.minimum_value}
+					t = {"noxys-extrasettingsinfo.merge4", t, {"noxys-extrasettingsinfo.minimum"}, ": ", tostring(v.minimum_value)}
 					comma = true
 				end
 				if v.default_value ~= nil  then
 					if comma then
 						t = {"noxys-extrasettingsinfo.merge", t, ", "}
 					end
-					t = {"noxys-extrasettingsinfo.merge4", t, {"noxys-extrasettingsinfo.default"}, ": ", v.default_value}
+					t = {"noxys-extrasettingsinfo.merge4", t, {"noxys-extrasettingsinfo.default"}, ": ", tostring(v.default_value)}
 					comma = true
 				end
 				if v.maximum_value ~= nil  then
 					if comma then
 						t = {"noxys-extrasettingsinfo.merge", t, ", "}
 					end
-					t = {"noxys-extrasettingsinfo.merge4", t, {"noxys-extrasettingsinfo.maximum"}, ": ", v.maximum_value}
+					t = {"noxys-extrasettingsinfo.merge4", t, {"noxys-extrasettingsinfo.maximum"}, ": ", tostring(v.maximum_value)}
 				end
 				v.localised_description = {"noxys-extrasettingsinfo.merge", t, "."}
 			end
@@ -40,7 +40,7 @@ if data.raw["string-setting"] then
 		if v.default_value ~= nil or v.allow_blank ~= nil then
 			local t = {"noxys-extrasettingsinfo.merge", {"mod-setting-description." .. v.name}, "\n\n"}
 			if v.default_value ~= nil  then
-				t = {"noxys-extrasettingsinfo.merge5", t, {"noxys-extrasettingsinfo.default"}, ": \"", v.default_value, "\" "}
+				t = {"noxys-extrasettingsinfo.merge5", t, {"noxys-extrasettingsinfo.default"}, ": \"", tostring(v.default_value), "\" "}
 			end
 			if v.allow_blank == true then
 				t = {"noxys-extrasettingsinfo.merge", t, {"noxys-extrasettingsinfo.blanks"}}
